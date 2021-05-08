@@ -17,18 +17,20 @@ module.exports = {
 
 
     module: {
-        rules: [{
-            test: /\.css$/i,
-            use: [{
-                    loader: MiniCssExtractPlugin.loader,
-                    options: {
+        rules: [
+            ...base.module.rules, {
+                test: /\.css$/i,
+                use: [{
+                        loader: MiniCssExtractPlugin.loader,
+                        options: {
 
-                        publicPath: '../',
+                            publicPath: '../',
 
+                        },
                     },
-                },
-                'css-loader',
-            ],
-        }, ]
+                    'css-loader',
+                ],
+            },
+        ]
     }
 };

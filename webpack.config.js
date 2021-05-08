@@ -13,10 +13,13 @@ module.exports = {
 
 
     module: {
-        rules: [{
-            test: /\.css$/i,
+        rules: [
+            ...base.module.rules, {
 
-            use: ["style-loader", "css-loader"]
-        }, ]
+                test: /\.css$/i,
+
+                use: ["style-loader", "css-loader"]
+            },
+        ]
     }
 };
