@@ -1,10 +1,14 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require('path');
 module.exports = {
-    mode: "production",
+    mode: "development",
     entry: './src/index.js',
     output: {
         filename: 'index.[contenthash].js'
+    },
+    devtool: 'inline-source-map',
+    devServer: {
+        contentBase: './dist',
     },
     plugins: [new HtmlWebpackPlugin({
         title: 'My App',
